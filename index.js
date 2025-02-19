@@ -3,7 +3,7 @@ const axios = require('axios');
 const app = express();
 var bodyParser = require('body-parser');
 
-const base_url = "http://localhost:5000";
+const base_url = "http://localhost:3000";
 // const base_url =
 
 app.set('view engine', 'ejs');
@@ -61,7 +61,7 @@ app.get("/update/:id", async (req,res) => {
 app.post("/update/:id", async (req,res) => {
     try {
         const data = { title: req.body.title, author: req.body.author};
-        await axios.put(base_url + '/books' + req.params.id, data);
+        await axios.put(base_url + '/books/' + req.params.id, data);
         res.redirect("/");
     }catch(err) {
         console.error(err);
@@ -71,7 +71,7 @@ app.post("/update/:id", async (req,res) => {
 
 app.get("/delete/:id", async (req,res) => {
     try {
-        await axios.delete(base_url + '/books' + req.params.id);
+        await axios.delete(base_url + '/books/' + req.params.id);
         res.redirect("/");
     }catch(err) {
         console.error(err);
@@ -81,4 +81,5 @@ app.get("/delete/:id", async (req,res) => {
 
 app.listen(5500, () => {
     console.log(`Server started on port http://localhost:5500...`);
+    
 });
