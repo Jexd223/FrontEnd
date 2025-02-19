@@ -4,7 +4,7 @@ const app = express();
 var bodyParser = require('body-parser');
 
 const base_url = "http://localhost:5000";
-// const base_url =
+
 
 app.set('view engine', 'ejs');
 app.use(bodyParser.json());
