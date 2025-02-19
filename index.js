@@ -1,8 +1,8 @@
 const express = require('express');
 const axios = require('axios');
-const app = express();
 var bodyParser = require('body-parser');
 const path = require("path");
+const app = express();
 
 const base_url = "http://localhost:5000";
 
